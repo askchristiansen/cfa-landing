@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christiansen Football Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #1B3A6B;
+    --blue-light: #4a82d4;
+    --white: #ffffff;
+    --off: #e8edf5;
+    --dim: rgba(255,255,255,0.5);
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--blue);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0 24px;
+  }
+
+  /* subtle grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 80px 0 48px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.1s;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 92px);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    color: var(--white);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.2s;
+  }
+
+  h1 span {
+    display: block;
+    color: var(--blue-light);
+  }
+
+  .tagline {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--dim);
+    max-width: 480px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.35s;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--blue-light);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.45s;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.55s;
+  }
+
+  .link-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .link-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  .link-row a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 1px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .link-row a:hover {
+    color: var(--blue-light);
+    border-color: var(--blue-light);
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 24px 0 32px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.25);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px) {
+    .link-row { flex-direction: column; gap: 4px; }
+    .link-label { min-width: unset; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Independent Football Analysis</p>
+  <h1>Christiansen<span>Football Analytics</span></h1>
+  <p class="tagline">Player profiling, tactical fit assessment and data-driven recruitment support for clubs, agencies and decision-makers.</p>
+  <div class="divider"></div>
+  <div class="links">
+    <div class="link-row">
+      <span class="link-label">Portfolio</span>
+      <a href="https://askchristiansen.github.io/cfa/" target="_blank">https://askchristiansen.github.io/cfa/</a>
+    </div>
+    <div class="link-row">
+      <span class="link-label">Contact</span>
+      <a href="mailto:ask@christiansenfootballanalytics.com" style="color:#4a82d4;border-color:rgba(74,130,212,0.4);">ask@christiansenfootballanalytics.com</a>
+    </div>
+  </div>
+</main>
+<footer>© 2026 Ask Christiansen · Christiansen Football Analytics</footer>
+</body>
+</html>
